@@ -1,27 +1,30 @@
 # Twitter-Streaming-API
 
-I am going to keep punctuation,emoji,hashtags and anything else that comes with raw text and this is my def of ML dataset.this is because emoji and hashtags provide valuable info
-on any downstream ML task 
+I am going to keep punctuation,emoji,hashtags and anything else that comes with raw text and this is my def of ML dataset.this is because emoji and hashtags provide valuable info on any downstream ML task 
 
--get raw text 
+### Steps:
+* Connected to the Twitter streaming API by creating project and accessed API using Bearer Token and done with keyword search on "Justin Bieber"
+
+![twitter_acct](https://user-images.githubusercontent.com/60243899/150699871-112c764b-b143-44b4-b684-ed85a9c781dd.JPG)
+
+* In order to filter out(remove) music from all tweets, I have done keyword match by passing all acroynms related to music in the query "-music" etc.some of the combination of keywords could be (sound, music, singing, rock, tune, melody) and used them as filter 
+
+![filter_out_music](https://user-images.githubusercontent.com/60243899/150699890-39bf69a1-7f05-4150-9f82-fbe87f886b7e.JPG)
+
+* Dropped the duplicates like retweets using -is:retweet in the query
+
+* Stored the tweets into a MongoDB(NoSQL) database 
+
+![store_mongodb](https://user-images.githubusercontent.com/60243899/150699898-9939ed9c-7962-4bc1-bbec-b59895058825.JPG)
 
 
-Connect to the Twitter streaming API and do a keyword search on "Justin Bieber"
 
+![mongodb](https://user-images.githubusercontent.com/60243899/150699908-01331fe7-704f-4d83-8915-fd6d3e84c6cf.JPG)
 
-keyword match to filter out music. post process go with API
--> keyword match on music with tweets. Its going to be a comb of keyword could be melody, album names, digital release( acroynm using python and use them as filter)
+* Produced the count for all and unique(removed duplicates) tweets consumed per day by calling "get_recent_tweets_count()" as shown below
 
--> emoji,hashtag, album release, drums emoji (eg), drop duplicates, retweets,  
+![unique_all_tweet_count](https://user-images.githubusercontent.com/60243899/150699920-0666056d-0fcc-4591-bd6d-7783bd977d50.JPG)
 
- ************** emoji,hashtag
-Filter out all tweets having to do with music(remove music)
-
-Store the tweets into a database of your choosing
-                                                          sparksql DB,sql,nosql(tweets)
-      Avoid duplicates  -> retweets,
-      Produce a count of all tweets consumed ->print(data) 
-      Produce a count of unique tweets -> print(data) after removing duplicates
 
 
 #### What are the risks involved in building such a pipeline?
