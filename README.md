@@ -21,7 +21,7 @@ I am going to keep punctuation,emoji,hashtags and anything else that comes with 
 
 ![mongodb](https://user-images.githubusercontent.com/60243899/150699908-01331fe7-704f-4d83-8915-fd6d3e84c6cf.JPG)
 
-* Produced the count for all and unique(removed duplicates) tweets consumed per day by calling "get_recent_tweets_count()" as shown below
+* Produced the count for all and unique(removed duplicates) tweets consumed per day(On 17/1/2022, without removing duplicates there are 1271 tweets and after removing duplicates(unique) there are 310 which is 1/4 of total tweets) as shown below
 
 ![unique_all_tweet_count](https://user-images.githubusercontent.com/60243899/150699920-0666056d-0fcc-4591-bd6d-7783bd977d50.JPG)
 
