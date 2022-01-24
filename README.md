@@ -1,6 +1,6 @@
 # Twitter-Streaming-API
 
-I am going to keep punctuation,emoji,hashtags and anything else that comes with raw text and this is my def of ML dataset.this is because emoji and hashtags provide valuable info on any downstream ML task 
+I am going to keep punctuation,emoji,hashtags and anything else that comes with raw text and this is my defination of Machine Learning dataset because emoji and hashtags provide valuable info on any Downstream ML task 
 
 ### Steps:
 * Connected to the Twitter streaming API by creating project and accessed API using Bearer Token and done with keyword search on "Justin Bieber"
@@ -46,7 +46,7 @@ I am going to keep punctuation,emoji,hashtags and anything else that comes with 
 
 ### What would a production-ready solution entail that a POC wouldn't? 
 
-* There is Error logging for Prod ready solution and unit solution whereas POC wouldn't.other. 
+* There is Error logging for Prod ready solution and unit solution whereas POC wouldn't.
 * If it fails in Production we can Backup, scalability, maintainability, cost etc
 
 
