@@ -7,7 +7,7 @@ I am going to keep punctuation,emoji,hashtags and anything else that comes with 
 
 ![twitter_acct](https://user-images.githubusercontent.com/60243899/150699871-112c764b-b143-44b4-b684-ed85a9c781dd.JPG)
 
-* In order to filter out(remove) music from all tweets, I have done keyword match by passing all acroynms related to music in the query "-music" etc.some of the combination of keywords could be (sound, music, singing, rock, tune, melody) and used them as filter 
+* In order to filter out(remove) music from all tweets, I have done keyword match by passing all acroynms related to music in the query "-music" etc.some of the combination of keywords could be (sound, music, singing, rock, tune, melody,etc). granted that there could be more keywords that's related to music being omitted at this current analysis further defination on music as a keyword needs to be optimized. 
 
 ![filter_out_music](https://user-images.githubusercontent.com/60243899/150699890-39bf69a1-7f05-4150-9f82-fbe87f886b7e.JPG)
 
@@ -29,31 +29,33 @@ I am going to keep punctuation,emoji,hashtags and anything else that comes with 
 
 ### What are the risks involved in building such a pipeline?
 
-* Scalability like 100 tweets every few sec and when would it stop working due to space disk issue
-* How long are we storing, some Mechanism to remove tweets older than 90 days
-* Way to write code to run faster and better way to store the data than current one we are using.
-* Consider Docker, containers
+*  the way that this ETL pipeline is developed will continuously gather or collect 100 tweets every few seconds and will not consider disk space for its execution.
+* The current ETL pipeline don't have mechanism to remove and update tweets(might consider tweets removing tweets older than 90 days or archive tweets older than a set period of time).
+* The current ETL pipeline gather only id, text and created timestamp if more features are requested the current pipeline needs to be modified.
+* The current pipeline don't have unit tests and the code are not fully optimized for production.
+* The current ETL pipeline uses MongoDB as Datastore option. Could consider other storage option based on business requirement(Eg. graphDB to explore social media connection) 
+* Consider Docker, containers for independent execution environment
 
 ### How would you roll out the pipeline going from proof-of-concept to a production-ready solution?
 
-* Migration to cloud, testing, Validating the Test cases
-* Sustain the stress in the peak hours like when high amount of data(tweets) comes at a time
+* Migration to cloud, testing and validating various test cases
+* Performing Stress tests and benchmarking to make sure pipeline can sustain peak hour traffic.
 * Refactoring the code to be Modular and reusable, executing the code or containerizing in Docker
-* Optimize the Dataflow and the best way to write CRUD to move into other Database
+* Optimize the Dataflow and develop CRUD mechanism.
 * Deploy using CI/CD so that it is continuous pipeline Development  
-
 
 
 ### What would a production-ready solution entail that a POC wouldn't? 
 
-* There is Error logging for Prod ready solution and unit solution whereas POC wouldn't.
-* If it fails in Production we can Backup, scalability, maintainability, cost etc
+* Production ready solution would have extensive error logging mechanism and pipeline health monitoring whereas POC doesn't.
+* Production ready solution would need to have disaster recovery mechanism.
+* Production ready solution needs to be scaled automatically to meet traffic demand.
+* Production ready solution is also cost optimized.
 
 
 ### What is the level of effort required to deliver each phase of the solution?
-* Inorder to move the solution from Proof of Concept to Production. we need to consider multiple phases like Data Extraction, Transformation, Validation, testing.
-* It takes a week for one phase like Unit testing, Error logging for Production ready solution and for Unit solution as well whereas POC wouldn't
+* In order to move the solution from Proof of Concept to Production.we need to perform code optimization,unit testing,Data Validation and pipeline benchmarking etc.For each one of this phase it would take roughly 2 to 3 days to complete.
 
 ### What is your estimated timeline for delivery for a production-ready solution?
 
-* It would take something around 2 week because we need to migrate to cloud which is easy and we are using few outputs and it takes time for testing, vallidation and logging errors for Prod ready solution
+* It would take something around 2 - 4 weeks because we need to migrate to cloud first and perform code optimization, unit testing, data validation, pipeline benchmarking etc to make sure pipeline is ready for Production.
