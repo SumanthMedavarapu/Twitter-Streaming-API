@@ -27,26 +27,33 @@ I am going to keep punctuation,emoji,hashtags and anything else that comes with 
 
 
 
-#### What are the risks involved in building such a pipeline?
-* scalability, 100 tweets every 5 sec, when would it stop working -> space disk issue, how long are we storing, mechansim to remove tweets older than 90 days, 
--> way to write code to run faster->better way to store the data than current Iam using-> consider docker, containers
+### What are the risks involved in building such a pipeline?
 
-#### How would you roll out the pipeline going from proof-of-concept to a production-ready solution?
-* migration to cloud, testing, validation the test cases, sustain the stress in the peak hours(1000 tweets high amt of data if it comes at a time)
--> refactoring the code to be moduler and reusable, executing the code or containerizing in docker -> optimize the dataflow -> best way to write CRUD for move to other DB
--> deploy using CI/CD so that continuous pipeline dev
+* Scalability like 100 tweets every few sec and when would it stop working due to space disk issue
+* How long are we storing, some Mechanism to remove tweets older than 90 days
+* Way to write code to run faster and better way to store the data than current one we are using.
+* Consider Docker, containers
+
+### How would you roll out the pipeline going from proof-of-concept to a production-ready solution?
+
+* Migration to cloud, testing, Validating the Test cases
+* Sustain the stress in the peak hours like when high amount of data(tweets) comes at a time
+* Refactoring the code to be Modular and reusable, executing the code or containerizing in Docker
+* Optimize the Dataflow and the best way to write CRUD to move into other Database
+* Deploy using CI/CD so that it is continuous pipeline Development  
 
 
 
-#### What would a production-ready solution entail that a POC wouldn't?
-* if it fails in prod we can backup, scalability, maintainability, cost, 
-error logging Prod ready sol will do and unit sol as well that POC wouldn't
+### What would a production-ready solution entail that a POC wouldn't? 
+
+* There is Error logging for Prod ready solution and unit solution whereas POC wouldn't.other. 
+* If it fails in Production we can Backup, scalability, maintainability, cost etc
 
 
-#### What is the level of effort required to deliver each phase of the solution?
-* POC->prod   valid,testing(how long it takes in each phase it takes a week for one phase, unit testing, error logging Prod ready sol will do and unit sol as well that POC wouldn't
-->
+### What is the level of effort required to deliver each phase of the solution?
+* Inorder to move the solution from Proof of Concept to Production. we need to consider multiple phases like Data Extraction, Transformation, Validation, testing.
+* It takes a week for one phase like Unit testing, Error logging for Production ready solution and for Unit solution as well whereas POC wouldn't
 
-#### What is your estimated timeline for delivery for a production-ready solution?
+### What is your estimated timeline for delivery for a production-ready solution?
 
-* something around 2 week (migration easy and only few o/p using,
+* It would take something around 2 week because we need to migrate to cloud which is easy and we are using few outputs and it takes time for testing, vallidation and logging errors for Prod ready solution
